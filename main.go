@@ -204,6 +204,33 @@ func main() {
 		var data int = v * k
 		fmt.Printf("Result = %v \n", data)
 	}
+
+	fmt.Println()
+	fmt.Println()
+
+	// Map (like Hashmap in Java)
+	menu := map[string]float64{
+		"soup":           4.99,
+		"pie":            7.99,
+		"salad":          6.99,
+		"Toffee Pudding": 3.55,
+	}
+
+	fmt.Println(menu)
+	fmt.Println(menu["pie"])
+	fmt.Println(menu["salad"])
+	fmt.Println(menu["an noi xa lo"]) // Output: 0
+
+	// Looping maps
+	for k, v := range menu {
+		fmt.Println(k, "-", v)
+	}
+
+	menu["pie"] = 55.99 // Can be modified
+
+	for k, v := range menu {
+		fmt.Println(k, "-", v)
+	}
 }
 
 func sayGreeting(data string) {
