@@ -191,6 +191,8 @@ func main() {
 	cycleNames(names[:], sayGoodbye)
 
 	fmt.Println(circleArea(5.5))
+
+	fmt.Println(getInitials("Loi My"))
 }
 
 func sayGreeting(data string) {
@@ -209,4 +211,24 @@ func cycleNames(names []string, f func(string)) {
 
 func circleArea(r float64) float64 {
 	return math.Pi * r * r
+}
+
+// Multiple return values
+
+func getInitials(data string) (string, string) {
+	s := strings.ToUpper(data)
+
+	splitter := strings.Split(s, " ")
+
+	var initials []string
+
+	for _, v := range splitter {
+		initials = append(initials, v[:1])
+	}
+
+	if len(initials) > 1 {
+		return initials[0], initials[1]
+	}
+
+	return initials[0], "_"
 }
