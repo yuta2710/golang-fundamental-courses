@@ -193,6 +193,17 @@ func main() {
 	fmt.Println(circleArea(5.5))
 
 	fmt.Println(getInitials("Loi My"))
+
+	for _, v := range names {
+		sayHello(v)
+	}
+
+	k := 50
+
+	for _, v := range points { // access the "points" variable indirectly
+		var data int = v * k
+		fmt.Printf("Result = %v \n", data)
+	}
 }
 
 func sayGreeting(data string) {
