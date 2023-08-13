@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt" // Formatting string
+	"math"
 	"sort"
 	"strings"
 )
@@ -179,4 +180,33 @@ func main() {
 		}
 	}
 
+	fmt.Println()
+	fmt.Println()
+
+	// Function
+	sayGreeting("Loi")
+	sayGoodbye("Loi")
+
+	cycleNames(names[:], sayGreeting)
+	cycleNames(names[:], sayGoodbye)
+
+	fmt.Println(circleArea(5.5))
+}
+
+func sayGreeting(data string) {
+	fmt.Printf("Hello bro %v \n", data)
+}
+
+func sayGoodbye(data string) {
+	fmt.Printf("Goodbye bro %v \n", data)
+}
+
+func cycleNames(names []string, f func(string)) {
+	for _, v := range names {
+		f(v)
+	}
+}
+
+func circleArea(r float64) float64 {
+	return math.Pi * r * r
 }
