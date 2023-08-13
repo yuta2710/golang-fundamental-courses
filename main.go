@@ -1,6 +1,10 @@
 package main
 
-import "fmt" // Formatting string
+import (
+	"fmt" // Formatting string
+	"sort"
+	"strings"
+)
 
 func main() {
 	fmt.Println("Hello world")
@@ -90,4 +94,36 @@ func main() {
 
 	fmt.Println(rangeOne, rangeTwo)
 
+	// Standard library
+	greeting := "Hello concac"
+	fmt.Println(strings.Contains(greeting, "Hello"))
+	fmt.Println(strings.Contains(greeting, "hello"))
+
+	// fmt.Println(strings.ReplaceAll(greeting, "Hello", "hi"))
+
+	fmt.Println(strings.ToUpper(greeting))
+
+	// The original variable does not change
+	fmt.Println("Original value of greeting variable = ", greeting)
+	fmt.Println(strings.Index(greeting, "concac"))
+	fmt.Println(strings.Split(greeting, " ")) // Split greeting into the array
+
+	fmt.Println()
+	fmt.Println()
+
+	// Sort packages
+	userNames := []string{"Loi", "Karma", "My", "Miley"}
+	quantities := []int{10, 5, 4, 33, 99, 44}
+
+	sort.Strings(userNames)
+	sort.Ints(quantities)
+
+	fmt.Println(userNames)
+	fmt.Println(quantities)
+
+	index := sort.SearchInts(quantities, 44)
+	nonExistIndex := sort.SearchInts(quantities, 45)
+
+	fmt.Println(index)
+	fmt.Println(nonExistIndex)
 }
