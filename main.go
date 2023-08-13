@@ -159,4 +159,24 @@ func main() {
 		fmt.Printf("The champion in this table is %v \n", value)
 		value = "New string" // cannot update or modify the value due to a "value" is a copy version of original value
 	}
+
+	fmt.Println()
+	fmt.Println()
+
+	// Boolean & Conditional
+	fmt.Println(age <= 50)
+	fmt.Println(age >= 50)
+	fmt.Println(age == 50)
+	fmt.Println(age != 40)
+
+	states := []string{"Deo on xiu nao", "Toi cam thay hom nay nhu cc", "Cai dit con me", "Dit con me cuoc doi"}
+
+	for index, value := range states {
+		if index == 1 {
+			fmt.Printf("Continuing at pos %v and val %v", index, value)
+		} else if index == 2 {
+			fmt.Print("Cai dit me no thiet chu troi oi")
+		}
+	}
+
 }
