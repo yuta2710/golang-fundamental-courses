@@ -126,4 +126,37 @@ func main() {
 
 	fmt.Println(index)
 	fmt.Println(nonExistIndex)
+
+	fmt.Println()
+	fmt.Println()
+
+	// For loop
+	x := 0
+	for x < 5 {
+		fmt.Println("Value of x is: ", x)
+		x++
+	}
+	// Traditional for loop
+	for i := 0; i < 5; i++ {
+		fmt.Println("Value of i is: ", i)
+	}
+
+	objects := []string{"Mikelodic", "DLow", "Hydra", "Double2T"}
+
+	for i := 0; i < len(objects); i++ {
+		fmt.Println(objects[i])
+	}
+	fmt.Println()
+	fmt.Println()
+
+	for index, value := range objects {
+		fmt.Printf("The value at index %v is %v \n", index, value)
+	}
+	fmt.Println()
+	fmt.Println()
+
+	for _, value := range objects {
+		fmt.Printf("The champion in this table is %v \n", value)
+		value = "New string" // cannot update or modify the value due to a "value" is a copy version of original value
+	}
 }
