@@ -261,7 +261,7 @@ func main() {
 
 	bill := newBill("Nguyen Phuc Loi")
 
-	fmt.Println(bill)
+	fmt.Println(bill.format())
 }
 
 func updateName(x string) {
