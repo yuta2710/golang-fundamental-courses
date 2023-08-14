@@ -28,7 +28,18 @@ func (b bill) format() string {
 		total += v
 	}
 
-	fs += fmt.Sprintf("%-25v ...$%0.2f", "total: ", total)
+	fs += fmt.Sprintf("%-25v ...$%0.2f \n", "tip: ", b.tip)
+	fs += fmt.Sprintf("%-25v ...$%0.2f \n", "total: ", total)
 
 	return fs
+}
+
+// Update tip
+func (b *bill) updateTip(tip float64) {
+	b.tip = tip // if we add pointer in parameter, go will automatically infer the b as dereference instead of copy itself
+}
+
+// Add item
+func (b bill) addItem(name string, price float64) {
+	b.items[name] = price
 }

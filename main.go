@@ -260,6 +260,7 @@ func main() {
 	fmt.Println(menu)
 
 	bill := newBill("Nguyen Phuc Loi")
+	bill.updateTip(10)
 
 	fmt.Println(bill.format())
 }
