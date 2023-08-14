@@ -258,6 +258,10 @@ func main() {
 	// Update the pointer wrapper value
 	updateMenu(menu)
 	fmt.Println(menu)
+
+	bill := newBill("Nguyen Phuc Loi")
+
+	fmt.Println(bill)
 }
 
 func updateName(x string) {
