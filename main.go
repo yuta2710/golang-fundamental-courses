@@ -231,6 +231,33 @@ func main() {
 	for k, v := range menu {
 		fmt.Println(k, "-", v)
 	}
+
+	name2 := "tifa"
+
+	updateName(name2) // It just update the copy version
+	fmt.Println(name2)
+
+	// Solution for this update the original
+	name2 = updateNameSolution(name2) // assign the function update to the original variable
+
+	fmt.Println(name2)
+
+	updateMenu(menu)
+	fmt.Println(menu)
+}
+
+func updateName(x string) {
+	x = "wedge"
+}
+
+func updateNameSolution(x string) string {
+	x = "Wet ass pussy"
+
+	return x
+}
+
+func updateMenu(x map[string]float64) {
+	x["coffee"] = 66999.99
 }
 
 func sayGreeting(data string) {
