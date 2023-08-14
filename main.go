@@ -234,14 +234,28 @@ func main() {
 
 	name2 := "tifa"
 
-	updateName(name2) // It just update the copy version
-	fmt.Println(name2)
+	updateName(name2) // It just update the copy version\
+	fmt.Println("Memory Address: ", &name2)
+
+	m := &name2
+
+	fmt.Println("Memory address of m: ", m)
+	fmt.Println("Value at memory address ", *m)
 
 	// Solution for this update the original
-	name2 = updateNameSolution(name2) // assign the function update to the original variable
-
+	// 1. Assign
+	fmt.Println(name2)
+	name2 = updateNameSolution1(name2) // assign the function update to the original variable
 	fmt.Println(name2)
 
+	// 2. Pointer
+	name3 := "Loi"
+
+	fmt.Println(name3)
+	updateNameSolutionPointer(&name3)
+	fmt.Println(name3)
+
+	// Update the pointer wrapper value
 	updateMenu(menu)
 	fmt.Println(menu)
 }
@@ -250,10 +264,14 @@ func updateName(x string) {
 	x = "wedge"
 }
 
-func updateNameSolution(x string) string {
+func updateNameSolution1(x string) string {
 	x = "Wet ass pussy"
 
 	return x
+}
+
+func updateNameSolutionPointer(x *string) {
+	*x = "Data"
 }
 
 func updateMenu(x map[string]float64) {
